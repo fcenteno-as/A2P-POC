@@ -5,7 +5,8 @@
   "portsAttributes": {
     "8080": {
       "label": "A2P Console",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
     }
   },
   "postStartCommand": "python3 -m http.server 8080",
