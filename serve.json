@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/A2P 10DLC Console.html" }
+  ]
+}

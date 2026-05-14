@@ -9,7 +9,7 @@
       "visibility": "public"
     }
   },
-  "postStartCommand": "nohup npx --yes serve . -p 8080 > /tmp/server.log 2>&1 &",
+  "postStartCommand": "nohup npx --yes serve . -p 8080 -c serve.json > /tmp/server.log 2>&1 &",
   "customizations": {
     "vscode": {
       "extensions": [
