@@ -9,7 +9,7 @@
       "visibility": "public"
     }
   },
-  "postStartCommand": "python3 -m http.server 8080",
+  "postStartCommand": "python3 -m http.server 8080 --bind 0.0.0.0 &",
   "customizations": {
     "vscode": {
       "extensions": [
