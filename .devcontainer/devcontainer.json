@@ -9,7 +9,7 @@
       "visibility": "public"
     }
   },
-  "postStartCommand": "nohup python3 -m http.server 8080 --bind 0.0.0.0 > /tmp/server.log 2>&1 &",
+  "postStartCommand": "nohup npx --yes serve . -p 8080 > /tmp/server.log 2>&1 &",
   "customizations": {
     "vscode": {
       "extensions": [
