@@ -1,0 +1,285 @@
+/* ============================================================
+   AbsenceSoft Design System — color, type, spacing, elevation
+   Source of truth for UI and marketing. Import this file, then
+   reference CSS variables by their --token names below.
+   ============================================================ */
+
+/* --- Fonts: Poppins (primary, headings) + Figtree (secondary, body) --- */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("fonts/Figtree-VariableFont_wght.ttf") format("truetype-variations");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype-variations");
+}
+
+:root {
+  /* ============================================================
+     COLOR — Brand palette (from AbsenceSoft Brand Guide, April 2026)
+     ============================================================ */
+
+  /* Primary */
+  --as-midnight:        #074252;   /* deepest brand color, backgrounds, dark sections */
+  --as-navy:            #096179;   /* links, body text accent */
+  --as-blue:            #40A3BD;   /* accent, secondary CTAs, info */
+  --as-light-blue:      #D0EDF4;   /* selected states, light fills */
+  --as-powder-blue:     #EBF7F7;   /* page + section backgrounds */
+
+  /* Secondary */
+  --as-orange:          #F16624;   /* primary CTA, headline accent */
+  --as-orange-burnt:    #CE4A0D;   /* hover/pressed orange */
+  --as-bright-blue:     #70C9E9;   /* alt accent (from brand guide font examples) */
+  --as-light-peach:     #FFF6F0;   /* warm neutral background */
+  --as-light-grey:      #F7F7F7;   /* cool neutral background */
+
+  /* Neutrals — from Figma foundation */
+  --as-black:           #000000;
+  --as-dark-charcoal:   #252525;   /* primary text */
+  --as-charcoal:        #505050;   /* 70% Dark Charcoal — secondary text */
+  --as-light-charcoal:  #717171;   /* tertiary text, icons */
+  --as-xlight-charcoal: #D3D3D3;   /* 20% Dark Charcoal — disabled text, borders */
+  --as-xxlight-charcoal:#F1F1F1;   /* 10% Dark Charcoal — soft dividers */
+  --as-white:           #FFFFFF;
+
+  /* Semantic (from Figma Foundation) */
+  --as-success:         #2E7D32;
+  --as-success-light:   rgba(46, 125, 50, 0.10);
+  --as-error:           #D32F2F;
+  --as-error-light:     #FBEAEA;
+  --as-warning:         var(--as-orange);
+  --as-warning-light:   var(--as-light-peach);
+  --as-info:            var(--as-blue);
+  --as-info-light:      var(--as-light-blue);
+
+  /* Semantic role tokens (prefer these over raw brand hexes).
+     Per Brand Guide, approved font colors are Black, Midnight, Navy, White only.
+     Bright Blue is ONLY approved as an eyebrow on dark backgrounds.
+     Orange (AS or Burnt) is NEVER a font color. */
+  --fg-1:               var(--as-midnight);         /* primary text */
+  --fg-2:               var(--as-navy);             /* secondary text */
+  --fg-3:               var(--as-light-charcoal);   /* tertiary/captions/icons (neutral) */
+  --fg-disabled:        var(--as-xlight-charcoal);
+  --fg-on-dark:         var(--as-white);
+  --fg-link:            var(--as-navy);             /* hyperlinks — Navy */
+  --fg-link-hover:      var(--as-midnight);
+
+  --bg-app:             var(--as-white);
+  --bg-surface:         var(--as-white);            /* cards, modals */
+  --bg-subtle:          var(--as-light-grey);       /* soft page sections */
+  --bg-subtle-cool:     var(--as-powder-blue);      /* cool section bg */
+  --bg-subtle-warm:     var(--as-light-peach);      /* warm section bg */
+  --bg-dark:            var(--as-midnight);         /* dark hero, footer */
+  --bg-selected:        var(--as-light-blue);
+
+  --border-default:     #E0E0E0;                    /* most cards, inputs, table rows */
+  --border-soft:        var(--as-xxlight-charcoal);
+  --border-strong:      var(--as-light-charcoal);
+  --border-focus:       var(--as-blue);
+
+  /* CTA */
+  --cta-primary-bg:     var(--as-orange);
+  --cta-primary-bg-hover:var(--as-orange-burnt);
+  --cta-primary-fg:     var(--as-white);
+  --cta-secondary-bg:   var(--as-midnight);
+  --cta-secondary-fg:   var(--as-white);
+
+  /* ============================================================
+     TYPE — Poppins (display) + Figtree (body). Lato legacy fallback.
+     ============================================================ */
+  --font-display:       "Poppins", "Montserrat", system-ui, sans-serif;
+  --font-body:          "Figtree", "Lato", system-ui, -apple-system, sans-serif;
+  --font-mono:          ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+
+  /* Type scale — derived from Figma Foundation spec */
+  --fs-display:    128px;    /* oversized display headers in brand spec */
+  --fs-h1:         32px;     /* H1 — Semibold 32/38 */
+  --fs-h2:         30px;     /* H2 — Semibold 30/36 */
+  --fs-h3:         24px;     /* H3 — Semibold 24/30 */
+  --fs-h4:         20px;     /* H4 — Semibold 20 */
+  --fs-h5:         18px;
+  --fs-body:       16px;     /* Body — Regular 16/24 */
+  --fs-body-sm:    14px;     /* Body Small — Regular 14/17 */
+  --fs-body-xs:    13px;     /* Body X-Small — Regular 13 */
+  --fs-caption:    12px;
+  --fs-eyebrow:    14px;     /* eyebrow: Poppins SemiBold, all caps, letter-spaced */
+
+  /* Line heights */
+  --lh-tight:      1.0;      /* UI labels, buttons, chips */
+  --lh-heading:    1.2;      /* headlines */
+  --lh-body:       1.5;      /* body paragraphs (expanded for readability) */
+
+  /* Letter spacing */
+  --ls-eyebrow:    0.04em;
+
+  /* ============================================================
+     SPACING — named scale from Figma "Spacing" section
+     Small, Base, Medium, Medium+, Large, X-large, X-large+, 2x large
+     ============================================================ */
+  --sp-small:      4px;
+  --sp-base:       8px;
+  --sp-medium:     12px;
+  --sp-medium-plus:16px;
+  --sp-large:      24px;
+  --sp-xlarge:     32px;
+  --sp-xlarge-plus:48px;
+  --sp-2xlarge:    64px;
+
+  /* ============================================================
+     RADIUS — rounded-everywhere shape language
+     ============================================================ */
+  --r-xs:   4px;      /* chips, inputs */
+  --r-sm:   5px;      /* buttons, small cards */
+  --r-md:   8px;      /* cards, alerts */
+  --r-lg:   14px;     /* large cards */
+  --r-xl:   20px;     /* marketing cards, modals */
+  --r-section: 20px;  /* section-to-section transitions (inner corners only) */
+  --r-full: 9999px;   /* pills, avatars */
+
+  /* ============================================================
+     ELEVATION — single token from spec. Don't stack or recolor.
+     ============================================================ */
+  --shadow-01:  0 1px 5px 0 rgba(0, 0, 0, 0.20);
+  --shadow-02:  0 4px 12px 0 rgba(0, 0, 0, 0.10);     /* menus, popovers */
+  --shadow-03:  0 12px 32px 0 rgba(7, 66, 82, 0.18);  /* modals (Midnight-tinted) */
+
+  /* ============================================================
+     MOTION — calm, functional, subtle
+     ============================================================ */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasize:cubic-bezier(0.2, 0, 0.2, 1);
+  --dur-fast:      120ms;
+  --dur-base:      200ms;
+  --dur-slow:      320ms;
+
+  /* Backdrops */
+  --backdrop-modal: rgba(38, 50, 56, 0.48);  /* Midnight-tinted scrim */
+}
+
+/* ============================================================
+   Semantic element defaults — drop this stylesheet in and h1/h2/
+   /p etc. inherit brand styling automatically.
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-body);
+  font-size:   var(--fs-body);
+  line-height: var(--lh-body);
+  color:       var(--fg-1);
+  background:  var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--sp-medium);
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-semibold); line-height: 38px; }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-semibold); line-height: 36px; }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: 30px; }
+h4 { font-size: var(--fs-h4); font-weight: var(--fw-semibold); line-height: 1.3; }
+h5 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); line-height: 1.3; }
+
+p {
+  margin: 0 0 var(--sp-medium-plus);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+small { font-size: var(--fs-body-sm); color: var(--fg-2); }
+
+/* Eyebrow — Poppins SemiBold, all caps, letter-spaced.
+   Per Brand Guide: Navy on light backgrounds, Bright Blue on dark. Never orange. */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--as-navy);
+  line-height: var(--lh-tight);
+}
+.eyebrow--on-dark { color: var(--as-bright-blue); }
+
+a, .link {
+  color: var(--fg-link);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+a:hover, .link:hover { color: var(--fg-link-hover); text-decoration: underline; }
+a:focus-visible, .link:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+strong, b { font-weight: var(--fw-bold); }
+em, i    { font-style: italic; } /* avoid in body copy — flagged by brand guide */
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.92em; }
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  margin: var(--sp-xlarge) 0;
+}
+
+::selection { background: var(--as-light-blue); color: var(--as-midnight); }
+
+/* Utility classes — optional sugar */
+.as-card {
+  background: var(--bg-surface);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-01);
+  padding: var(--sp-large);
+}
+.as-card--bordered {
+  box-shadow: none;
+  border: 1px solid var(--border-default);
+}
